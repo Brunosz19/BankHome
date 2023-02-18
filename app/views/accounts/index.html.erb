@@ -1,0 +1,54 @@
+<h1>Lista de Cuentas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Banco</th>
+      <th>Saldo</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @accounts.each do |account| %>
+      <tr>
+        <td><%= account.id %></td>
+        <td><%= account.name %></td>
+        <td><%= account.acc %></td>
+        <td><%= account.provider_id %></td>
+        <td>
+          <%= link_to 'Editar', edit_account_path(account) %>
+          <%= button_to 'Eliminar', account_path(account), method: :delete, data: { confirm: '¿Estás seguro que deseas eliminar esta cuenta?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h2>Agregar nueva cuenta</h2>
+<%= form_with model: Account.new, local: true do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :acc %>
+    <%= form.text_field :acc %>
+  </div>
+
+  <div>
+    <%= form.label :provider_id %>
+    <%= form.text_field :provider_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<br>
+
+<%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete %>
