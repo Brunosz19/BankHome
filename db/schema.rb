@@ -19,7 +19,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_16_183845) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "provider_id", null: false
+    t.bigint "provider_id"
     t.index ["provider_id"], name: "index_accounts_on_provider_id"
   end
 
