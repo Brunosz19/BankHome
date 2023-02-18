@@ -1,12 +1,9 @@
 class AccountsController < ApplicationController
   before_action :authenticate_user!
 
-  def index
-    @accounts = Account.all
-  end
-
   def new
     @account = Account.new
+    @accounts = Account.all
   end
 
   def create
@@ -15,6 +12,7 @@ class AccountsController < ApplicationController
     if @account.save
       redirect_to accounts_path, notice: "La cuenta se creó correctamente."
     else
+      @error_message = @account.errors.full_messages.to_sentence
       render :new
     end
   end

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   
-  root 'accounts#index'
+  root 'accounts#new'
 
   get '/login', to: 'sessions#new'
   get '/signup', to: 'sessions#signup'

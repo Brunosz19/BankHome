@@ -19,8 +19,13 @@
         <td><%= account.acc %></td>
         <td><%= account.provider_id %></td>
         <td>
-          <%= link_to 'Editar', edit_account_path(account) %>
-          <%= button_to 'Eliminar', account_path(account), method: :delete, data: { confirm: '¿Estás seguro que deseas eliminar esta cuenta?' } %>
+          <%= link_to "Editar", edit_account_path(account) %>
+          <%= button_to "Eliminar",
+          account_path(account),
+          method: :delete,
+          data: {
+            confirm: "¿Estás seguro que deseas eliminar esta cuenta?"
+          } %>
         </td>
       </tr>
     <% end %>
@@ -29,6 +34,10 @@
 
 <h2>Agregar nueva cuenta</h2>
 <%= form_with model: Account.new, local: true do |form| %>
+  <% if @error_message.present? %>
+    <div class="alert alert-danger"><%= @error_message %></div>
+  <% end %>
+
   <div>
     <%= form.label :name %>
     <%= form.text_field :name %>
@@ -51,4 +60,4 @@
 
 <br>
 
-<%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete %>
+<%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete %>
