@@ -1,6 +1,5 @@
 class Account < ApplicationRecord
-  belong_to :provider
+  belongs_to :provider
 
-  validates :name, length: { maximum: 50, message: "El nombre de la cuenta no puede tener más de 50 caracteres" }
-
+  validates :name, length: { maximum: 50, message: I18n.t('errors.messages.account.name.too_long', count: 50) }
 end

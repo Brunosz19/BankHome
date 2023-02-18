@@ -29,12 +29,12 @@
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
 
-en:
-  hello: "Hello world"
+es:
+  hello: "Hola mundo"
   activerecord:
     errors:
       models:
         account:
           attributes:
             name:
-              too_long: "Account name cannot be longer than %{count} characters"
+              too_long: "El nombre de la cuenta no puede tener más de %{count} caracteres"
