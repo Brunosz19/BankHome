@@ -25,7 +25,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_16_183845) do
 
   create_table "providers", force: :cascade do |t|
     t.string "name"
-    t.string "nid"
+    t.string "NIT"
     t.string "contact_name"
     t.string "phone"
     t.datetime "created_at", null: false
