@@ -1,0 +1,23 @@
+<h2>Editar cuenta</h2>
+
+<%= form_with model: @account, local: true do |form| %>
+  <% if flash[:alert] %>
+    <div class="alert alert-danger"><%= flash[:alert] %></div>
+  <% elsif flash[:notice] %>
+    <div class="alert alert-success"><%= flash[:notice] %></div>
+  <% end %>
+
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :acc %>
+    <%= form.text_field :acc %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

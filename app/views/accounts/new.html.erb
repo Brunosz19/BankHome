@@ -6,12 +6,13 @@
       <th>ID</th>
       <th>Nombre</th>
       <th>Banco</th>
-      <th>Saldo</th>
-      <th>Acciones</th>
+      <th>Proveedores</th>
+      <th></th>
     </tr>
   </thead>
 
   <tbody>
+    <% @accounts = Account.all if @accounts.nil? %>
     <% @accounts.each do |account| %>
       <tr>
         <td><%= account.id %></td>
@@ -34,10 +35,6 @@
 
 <h2>Agregar nueva cuenta</h2>
 <%= form_with model: Account.new, local: true do |form| %>
-  <% if @error_message.present? %>
-    <div class="alert alert-danger"><%= @error_message %></div>
-  <% end %>
-
   <div>
     <%= form.label :name %>
     <%= form.text_field :name %>

@@ -27,10 +27,12 @@ class AccountsController < ApplicationController
 
   def update
     @account = Account.find(params[:id])
-
+  
     if @account.update(account_params)
-      redirect_to @account
+      redirect_to root_path, notice: "La cuenta se actualizó correctamente."
     else
+      flash.now[:alert] = "Los datos son inválidos."
+      @error_message = @account.errors.full_messages.to_sentence
       render :edit
     end
   end
@@ -39,7 +41,7 @@ class AccountsController < ApplicationController
     @account = Account.find(params[:id])
     @account.destroy
 
-    redirect_to accounts_path
+    redirect_to accounts_path, notice: "La cuenta se eliminó correctamente."
   end
 
   private
