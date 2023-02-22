@@ -10,7 +10,7 @@ class AccountsController < ApplicationController
     @account = Account.new(account_params)
 
     if @account.save
-      redirect_to accounts_path, notice: "La cuenta se creó correctamente."
+      redirect_to root_path, notice: "La cuenta se creó correctamente."
     else
       @error_message = @account.errors.full_messages.to_sentence
       render :new
@@ -41,7 +41,7 @@ class AccountsController < ApplicationController
     @account = Account.find(params[:id])
     @account.destroy
 
-    redirect_to accounts_path, notice: "La cuenta se eliminó correctamente."
+    redirect_to root_path, notice: "La cuenta se eliminó correctamente."
   end
 
   private
