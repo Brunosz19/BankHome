@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'providers/index'
+  get 'providers/show'
+  get 'providers/new'
+  get 'providers/create'
+  get 'providers/edit'
+  get 'providers/update'
+  get 'providers/destroy'
   devise_for :users
   
   root 'accounts#new'
