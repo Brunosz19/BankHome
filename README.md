@@ -1,24 +1,74 @@
-# README
+# BankHome
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+BankHome is a technical test that evaluates the knowledge of the person. Following the instructions; I have to create an application on Ruby on Rails.
 
-Things you may want to cover:
+## Installation
+### Clone the repository
 
-* Ruby version
+```shell
+git clone git@github.com:Brunosz19/BankHome.git
+```
 
-* System dependencies
+### Check your Ruby version
 
-* Configuration
+```shell
+ruby -v
+```
 
-* Database creation
+The ouput should start with something like `ruby 2.5.1`
 
-* Database initialization
+If not, install the right ruby version using [rbenv](https://github.com/rbenv/rbenv) (it could take a while):
 
-* How to run the test suite
+```shell
+rbenv install 3.1.2
+```
+### Start PostgreSQL
+Using the terminal, you have to open services of Postgresql. In my case, I start my Postgresql databases with the next command.
+ 
+```bash
+sudo service postgresql
+```
+### Set and initialize the database
+After that, you have to create the databases with the next command. Note: 
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+rails db:create
+```
 
-* Deployment instructions
+If you have already created the database with the same name, you can drop it using the `rails db:drop` command.
 
-* ...
+Then, you have to create the model table and migrations.
+
+```bash
+rails db:migrate
+```
+
+Later, in this application, we have dummy data, so you can poblate the app with the next command.
+
+```bash
+rails db:seed
+```
+
+### Install dependencies
+
+Using [Bundler](https://github.com/bundler/bundler).
+
+```shell
+bundle install
+```
+
+### Start the server
+Finnaly, to start the server write the following command.
+
+```bash
+rails s
+```
+
+And to go to the page, paste the next url `http://127.0.0.1:3000` in the browser.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
+## Author
+[Bruno Saenz](https://github.com/Brunosz19)
