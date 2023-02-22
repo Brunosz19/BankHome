@@ -64,6 +64,10 @@ Finnaly, to start the server write the following command.
 rails s
 ```
 
+This is an example of what you will have in your terminal.
+
+![terminal](https://user-images.githubusercontent.com/103700965/220712373-e2796702-7a6c-483e-9724-2d0082425712.png)
+
 And to go to the page, paste the next url `http://127.0.0.1:3000` in the browser.
 
 ## License
