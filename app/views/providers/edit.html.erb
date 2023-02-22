@@ -1,2 +1,33 @@
-<h1>Providers#edit</h1>
-<p>Find me in app/views/providers/edit.html.erb</p>
+<h2>Editar Proveedor</h2>
+
+<%= form_with model: @provider, local: true do |form| %>
+  <% if flash[:alert] %>
+    <div class="alert alert-danger"><%= flash[:alert] %></div>
+  <% elsif flash[:notice] %>
+    <div class="alert alert-success"><%= flash[:notice] %></div>
+  <% end %>
+
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :NIT %>
+    <%= form.text_field :NIT %>
+  </div>
+
+  <div>
+    <%= form.label :contact_name %>
+    <%= form.text_field :contact_name %>
+  </div>
+
+  <div>
+    <%= form.label :phone %>
+    <%= form.text_field :phone %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

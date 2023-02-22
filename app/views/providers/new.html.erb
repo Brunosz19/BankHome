@@ -1,2 +1,29 @@
-<h1>Providers#new</h1>
-<p>Find me in app/views/providers/new.html.erb</p>
+<h1>Create a new provider</h1>
+
+<%= form_with(model: @provider, url: providers_path) do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :NIT %>
+    <%= form.text_field :NIT %>
+  </div>
+
+  <div>
+    <%= form.label :contact_name %>
+    <%= form.text_field :contact_name %>
+  </div>
+
+  <div>
+    <%= form.label :phone %>
+    <%= form.text_field :phone %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<%= link_to "Back", providers_path %>
